@@ -9,3 +9,14 @@ publicada traz três APKs (`arm64-v8a`, `armeabi-v7a`, `x86_64`); baixe o
 `arm64-v8a` se não souber qual usar (compatível com a grande maioria dos
 celulares Android modernos).
 
+## Licenças
+
+O AstroStitch é software proprietário (a partir da v0.41.0; versões anteriores
+foram publicadas sob a licença MIT vigente à época).
+
+Ele incorpora bibliotecas de terceiros que permanecem sob as licenças delas. A
+**LibRaw**, usada para ler arquivos RAW de câmera, é distribuída sob CDDL-1.0
+neste projeto, e essa licença exige que seus fontes fiquem disponíveis a quem
+recebe o binário — estão em **[`third-party-sources/`](third-party-sources/)**,
+junto com os textos das licenças e a nota de modificações.
+
