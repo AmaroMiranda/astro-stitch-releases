@@ -9,6 +9,13 @@ publicada traz três APKs (`arm64-v8a`, `armeabi-v7a`, `x86_64`); baixe o
 `arm64-v8a` se não souber qual usar (compatível com a grande maioria dos
 celulares Android modernos).
 
+## Privacidade
+
+O AstroStitch processa as suas fotos inteiramente no aparelho e não coleta
+nenhum dado. A política completa está publicada em
+**[Política de Privacidade](https://amaromiranda.github.io/astro-stitch-releases/privacy-policy.html)**
+([English](https://amaromiranda.github.io/astro-stitch-releases/privacy-policy.en.html)).
+
 ## Licenças
 
 O AstroStitch é software proprietário (a partir da v0.41.0; versões anteriores
