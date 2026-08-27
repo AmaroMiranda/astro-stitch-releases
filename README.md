@@ -1,13 +1,19 @@
 # AstroStitch — Releases
 
-Este repositório existe **só para hospedar os APKs de release** do AstroStitch
-(compositor de panoramas/mosaicos lunares, solares e de espaço profundo).
+O AstroStitch é um compositor de mosaicos e panoramas astronômicos (Lua, Sol,
+céu profundo e paisagens). O código-fonte é privado; este repositório existe
+para publicar a **política de privacidade** e os **fontes de terceiros** que as
+licenças exigem, e mantém o histórico das versões antigas.
 
-O código-fonte é privado. Se você quer baixar o app diretamente (fora da
-Google Play Store), veja a aba **[Releases](../../releases)** — cada versão
-publicada traz três APKs (`arm64-v8a`, `armeabi-v7a`, `x86_64`); baixe o
-`arm64-v8a` se não souber qual usar (compatível com a grande maioria dos
-celulares Android modernos).
+## Onde baixar o app
+
+O **AstroStitch para Android** passou a ser distribuído pela **Google Play
+Store**. Os APKs que ficavam aqui foram retirados — o histórico de versões
+segue visível na aba [Releases](../../releases), mas sem os instaladores
+Android.
+
+As builds para **Windows** continuam disponíveis nas releases (arquivos
+`-windows-x64.zip`).
 
 ## Privacidade
 
