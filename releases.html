@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notas de versão — AstroStitch</title>
+<meta name="description" content="O que mudou em cada versão do AstroStitch, com a medição que fechou cada correção.">
+<meta name="theme-color" content="#05070D">
+<link rel="canonical" href="https://amaromiranda.github.io/astro-stitch-releases/releases.html">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="faixa">
+    <a class="marca" href="./" aria-label="AstroStitch — início">
+      <svg class="marca-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" opacity=".55"/>
+      </svg>
+      <span>AstroStitch</span>
+    </a>
+    <nav class="navegacao" aria-label="Principal">
+      <a href="releases.html" aria-current="page">Notas de versão</a>
+      <a href="./#obter">Baixar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <div class="topo-pagina">
+    <a class="voltar" href="./">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M19 12H6m0 0 5-5m-5 5 5 5" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Voltar ao início
+    </a>
+    <h1>Notas de versão</h1>
+    <p class="linha-fina">
+      Cada correção aqui tem o efeito em uma frase e a medição que a fechou
+      logo abaixo. O número vale para o conjunto de teste citado — não é uma
+      promessa geral sobre qualquer imagem.
+    </p>
+    <p class="linha-fina">
+      As versões para Windows ficam em
+      <a href="https://github.com/AmaroMiranda/astro-stitch-releases/releases">releases do GitHub</a>.
+      O aplicativo Android é atualizado pela
+      <a href="https://play.google.com/store/apps/details?id=com.astrostitch.app">Google Play</a>.
+    </p>
+  </div>
+
+  <div class="lista-versoes">
+
+    <!-- ============================================================ 0.56.2 -->
+    <article class="versao" id="v0-56-2">
+      <div class="versao-cabecalho">
+        <div class="versao-meta">
+          <span class="versao-tag">v0.56.2</span>
+          <time class="versao-data" datetime="2026-10-06">06/10/2026</time>
+        </div>
+        <p class="versao-plataforma">Windows x64</p>
+      </div>
+      <div class="versao-corpo">
+        <h2>Redução do degrau no limbo da Lua</h2>
+
+        <p><strong>A borda do disco quase não dá mais salto entre painéis.</strong>
+          Em mosaicos com muitos quadros, o limbo descia, fazia um patamar e
+          descia de novo, onde a composição trocava de painel. A causa era um
+          erro de geometria na passagem do alinhamento para a montagem: cada
+          painel era colocado com um desvio proporcional à sua escala e à
+          distância do centro, chegando a 10 pixels.</p>
+        <p class="medicao">No conjunto de teste, o salto no limbo caiu de
+          <span class="dado">11,7</span> para <span class="dado">1,5</span> pixel.</p>
+
+        <p><strong>Mais disco aproveitado.</strong> Com os painéis caindo no
+          lugar certo, o contorno da Lua passou a ser reconhecido na volta
+          inteira em vez de em pedaços.</p>
+        <p class="medicao">Num mosaico de celular com 16 quadros, a cobertura da
+          borda subiu de <span class="dado">47%</span> para
+          <span class="dado">64%</span>, e o disco saiu
+          <span class="dado">2,4%</span> maior — sem mudar a escala da imagem.</p>
+
+        <p>A correção vale para Lua e Sol, e não altera panorama nem céu profundo.</p>
+
+        <p>
+          <a class="baixar-versao" href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/tag/v0.56.2">
+            Baixar v0.56.2 para Windows
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <!-- ============================================================ 0.56.1 -->
+    <article class="versao" id="v0-56-1">
+      <div class="versao-cabecalho">
+        <div class="versao-meta">
+          <span class="versao-tag">v0.56.1</span>
+          <time class="versao-data" datetime="2026-10-05">05/10/2026</time>
+        </div>
+        <p class="versao-plataforma">Windows x64</p>
+      </div>
+      <div class="versao-corpo">
+        <h2>A faixa em volta da Lua acabou</h2>
+
+        <p><strong>Quem compôs um mosaico de Lua cheia via uma faixa clara em
+          volta do disco</strong>, com uma borda nítida contra o fundo.</p>
+
+        <p>O diagnóstico mudou o entendimento do problema: <strong>a faixa não
+          era dado inventado pelo app.</strong> O perfil do limbo foi medido em
+          três pontos — no arquivo que sai do stacker, no painel já alinhado e
+          tratado, e no mosaico final.</p>
+
+        <div class="tabela-envolve" role="region" tabindex="0"
+             aria-label="Brilho a cada distância da borda">
+          <table>
+            <caption class="rotulo">Brilho a cada distância da borda</caption>
+            <thead>
+              <tr><th>distância</th><th>arquivo</th><th>painel</th><th>mosaico (antes)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>+10 px</td><td>33,20</td><td>31,84</td><td>31,42</td></tr>
+              <tr><td>+20 px</td><td>25,62</td><td>24,92</td><td>24,50</td></tr>
+              <tr><td>+30 px</td><td>19,87</td><td>19,84</td><td>0,19</td></tr>
+              <tr><td>+80 px</td><td>14,06</td><td>14,22</td><td>0,00</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>A luz em volta do disco está no arquivo que <strong>entra</strong> —
+          é o halo da própria captura, 27 sigmas acima do ruído do céu. O app a
+          reproduzia fielmente até +20 px e então <strong>cortava</strong>: 24
+          níveis em 10 px, onde a captura continuaria caindo suavemente por mais
+          100 px. O aro se via porque tinha <strong>borda</strong>, não porque
+          tinha luz.</p>
+
+        <p><strong>O que mudou:</strong> o corte morre por rampa, ao longo de 5%
+          do raio do disco.</p>
+
+        <div class="tabela-envolve" role="region" tabindex="0"
+             aria-label="Réguas antes e depois da correção">
+          <table>
+            <thead>
+              <tr><th>régua</th><th>antes</th><th>agora</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>degrau na borda (de 255)</td><td>9,63</td><td>0,75</td></tr>
+              <tr><td>quanto do contorno tem ele</td><td>100%</td><td>0,0%</td></tr>
+              <tr><td>visibilidade do aro</td><td>1,6</td><td>0,1</td></tr>
+              <tr><td>pixels que escureceram</td><td>—</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Nenhum pixel ficou mais escuro do que a versão anterior entregava.
+          Nada foi removido da sua imagem.</p>
+
+        <p>
+          <a class="baixar-versao" href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/tag/v0.56.1">
+            Baixar v0.56.1 para Windows
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <!-- ============================================================ 0.56.0 -->
+    <article class="versao" id="v0-56-0">
+      <div class="versao-cabecalho">
+        <div class="versao-meta">
+          <span class="versao-tag">v0.56.0</span>
+          <time class="versao-data" datetime="2026-10-04">04/10/2026</time>
+        </div>
+        <p class="versao-plataforma">Windows x64</p>
+      </div>
+      <div class="versao-corpo">
+        <h2>O recorte do disco passou a seguir o limbo medido</h2>
+
+        <p><strong>Lua cheia.</strong> O recorte do disco deixou de ser feito por
+          uma elipse com folga e passou a seguir o <strong>contorno do limbo
+          medido</strong>, ângulo a ângulo — 1440 deles.</p>
+        <p class="medicao">No conjunto de teste: a faixa cai de
+          <span class="dado">0,112R</span> presente em
+          <span class="dado">100%</span> dos ângulos para <strong>zero</strong>;
+          a gradação do limbo até o preto cai de <span class="dado">297</span>
+          para <span class="dado">28</span> px; e nenhum pixel do disco é
+          perdido.</p>
+
+        <p>A elipse nunca poderia resolver isso: o limbo varia cerca de ±10 px
+          entre ângulos, e uma elipse é uma só — qualquer folga larga o bastante
+          para não morder o disco num ponto deixa faixa em todos os outros.</p>
+
+        <p><strong>Fases parciais (Lua gibosa, crescente).</strong> O céu
+          observado de cada painel passou a ser preservado, e a faixa artificial
+          desapareceu. O fundo só fica preto com a opção “Fundo preto” ligada.</p>
+
+        <p class="medicao"><strong>Observação honesta:</strong> em resolução
+          reduzida a faixa diminui muito, mas não chega a zero. A descrição
+          correta é <em>redução</em> da faixa — zerada na resolução total,
+          residual nas escalas menores.</p>
+
+        <p><strong>Também nesta versão:</strong> a barra de progresso da análise
+          deixou de ficar parada e saltar para o fim — agora mostra o avanço
+          real, em quatro etapas.</p>
+
+        <p>
+          <a class="baixar-versao" href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/tag/v0.56.0">
+            Baixar v0.56.0 para Windows
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <article class="versao">
+      <div class="versao-cabecalho">
+        <div class="versao-meta"><span class="versao-tag">anteriores</span></div>
+      </div>
+      <div class="versao-corpo">
+        <p class="linha-fina">
+          O histórico das versões mais antigas, com os arquivos de cada uma,
+          fica na aba de releases do repositório.
+        </p>
+        <p>
+          <a class="baixar-versao" href="https://github.com/AmaroMiranda/astro-stitch-releases/releases">
+            Ver todas as versões no GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="rodape-conteudo">
+    <div class="rodape-marca">
+      <p class="rodape-nome">AstroStitch</p>
+      <p class="rodape-sub">
+        As suas fotos são processadas no seu aparelho e não são enviadas a
+        lugar nenhum.
+      </p>
+    </div>
+    <nav class="rodape-links" aria-label="Rodapé">
+      <a href="./">Início</a>
+      <a href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/latest">Baixar para Windows</a>
+      <a href="https://play.google.com/store/apps/details?id=com.astrostitch.app">Google Play</a>
+      <a href="privacy-policy.html">Política de privacidade</a>
+      <a href="privacy-policy.en.html">Privacy policy (EN)</a>
+      <a href="third-party-sources/">Fontes de terceiros</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+/* AstroStitch — site
+ *
+ * Identidade: fundo quase preto, superfícies pouco distintas, UM acento
+ * dourado reservado à ação principal. Sem gradiente decorativo, sem estrelas
+ * animadas, sem brilho atrás da Lua: a fotografia já traz complexidade
+ * visual de sobra, e competir com ela é o erro clássico aqui.
+ *
+ * O fundo #05070D é o mesmo das páginas de política que já existem neste
+ * domínio — o site tem de parecer uma coisa só.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --fundo:        #05070D;
+  --superficie:   #0B1018;
+  --elevada:      #121925;
+  --linha:        #1E2736;
+  --texto:        #EDF4FF;
+  --texto-suave:  #93A1B8;
+  --acento:       #E8C87A;
+  --acento-fraco: #2A2316;
+
+  --serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+          "Liberation Mono", monospace;
+
+  --largura: 1120px;
+  --gutter: 24px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--texto); }
+
+/* Foco VISÍVEL. Sobriedade não é motivo para esconder onde o teclado está. */
+:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--acento);
+  color: #0A0A0A;
+  padding: 10px 16px;
+  font-weight: 700;
+  z-index: 10;
+}
+.pular:focus { left: 8px; top: 8px; }
+
+/* ----------------------------------------------------------------- topo */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--fundo) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linha);
+}
+
+.faixa {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  font-size: 1.02rem;
+}
+.marca-icone { width: 22px; height: 22px; color: var(--acento); flex: none; }
+
+.navegacao { display: flex; gap: 22px; }
+.navegacao a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.navegacao a:hover { color: var(--texto); }
+
+/* ---------------------------------------------------------------- herói */
+
+.heroi {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 56px var(--gutter) 40px;
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 4.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+
+.linha-fina {
+  color: var(--texto-suave);
+  max-width: 54ch;
+  margin: 0 0 14px;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 26px 0 16px;
+  scroll-margin-top: 80px;
+}
+
+/* O PREÇO VAI NO PRÓPRIO BOTÃO. "Disponível para Android" não comunica que
+   é pago, e descobrir isso só na loja é uma surpresa que ninguém pediu. */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color .16s ease, border-color .16s ease,
+              transform .16s ease;
+  min-height: 48px;
+}
+.botao:hover { transform: translateY(-1px); }
+.botao svg { width: 22px; height: 22px; flex: none; }
+.botao-texto { display: flex; flex-direction: column; line-height: 1.25; }
+.botao-texto strong { font-weight: 650; font-size: 0.98rem; }
+.botao-texto small { font-size: 0.8rem; opacity: .72; }
+
+.botao-primario {
+  background: var(--acento);
+  color: #0A0A0A;
+}
+.botao-primario:hover { background: #F0D691; }
+
+.botao-secundario {
+  background: var(--elevada);
+  border-color: var(--linha);
+  color: var(--texto);
+}
+.botao-secundario:hover { border-color: #2E3A4D; background: #16202E; }
+
+.nota-versao { color: var(--texto-suave); font-size: 0.92rem; margin: 0; }
+.nota-versao a { color: var(--acento); text-decoration-color: #6A5A33; }
+
+.dado {
+  font-family: var(--mono);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto);
+}
+
+.heroi-figura { margin: 0; }
+/* O ceu do mosaico e preto puro e o fundo do site quase preto: sem a
+   moldura, a imagem deixava um retangulo meio-visivel. Com a linha, a
+   borda vira enquadramento. */
+.heroi-figura img,
+.detalhe-figura img {
+  border-radius: 14px;
+  border: 1px solid var(--linha);
+}
+figcaption {
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-top: 12px;
+}
+
+/* --------------------------------------------------------------- seções */
+
+.secao {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 64px var(--gutter);
+  border-top: 1px solid var(--linha);
+}
+
+.secao-cabecalho { max-width: 62ch; margin-bottom: 34px; }
+
+.rotulo {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin: 0 0 6px;
+}
+
+/* ------------------------------------------------------------- capturas */
+
+.telas { display: grid; gap: 40px; }
+.tela { margin: 0; }
+.tela img {
+  border-radius: 12px;
+  border: 1px solid var(--linha);
+  background: var(--superficie);
+}
+.tela figcaption { max-width: 62ch; }
+.tela figcaption strong { color: var(--texto); font-weight: 650; }
+
+/* -------------------------------------------------------------- detalhe */
+
+.secao-detalhe { padding-top: 56px; padding-bottom: 56px; }
+.detalhe-grade { display: grid; gap: 32px; align-items: center; }
+.detalhe-figura { margin: 0; }
+.detalhe-figura img { border-radius: 12px; }
+
+/* ---------------------------------------------------------------- modos */
+
+.modos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 26px 40px;
+}
+.modos li { max-width: 46ch; }
+.modos p { color: var(--texto-suave); margin: 0; font-size: 0.95rem; }
+
+/* -------------------------------------------------------------- versões */
+
+.mudancas { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 22px; }
+.mudancas li { max-width: 68ch; }
+.mudancas p { margin: 0; }
+.mudancas strong { font-weight: 650; }
+
+/* A MEDIÇÃO FICA, numa segunda camada. "Precisão oito vezes maior"
+   transformaria uma medida localizada numa promessa geral. */
+.medicao {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-top: 4px !important;
+  padding-left: 14px;
+  border-left: 2px solid var(--linha);
+}
+
+.mais { margin: 0; }
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--acento);
+  text-decoration: none;
+  font-weight: 600;
+  min-height: 44px;
+}
+.link-seta svg { width: 20px; height: 20px; }
+.link-seta:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* --------------------------------------------------------------- rodapé */
+
+.rodape {
+  border-top: 1px solid var(--linha);
+  background: var(--superficie);
+  margin-top: 24px;
+}
+.rodape-conteudo {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 40px var(--gutter) 56px;
+  display: grid;
+  gap: 28px;
+}
+.rodape-nome { font-family: var(--serif); font-size: 1.3rem; margin: 0 0 6px; }
+.rodape-sub { color: var(--texto-suave); font-size: 0.9rem; margin: 0; max-width: 42ch; }
+.rodape-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.rodape-links a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 0;
+}
+.rodape-links a:hover { color: var(--texto); }
+
+/* ------------------------------------------------------------ releases */
+
+.topo-pagina {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 52px var(--gutter) 26px;
+}
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-bottom: 22px;
+  min-height: 44px;
+}
+.voltar:hover { color: var(--texto); }
+.voltar svg { width: 18px; height: 18px; }
+
+.lista-versoes {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 72px;
+}
+
+.versao {
+  border-top: 1px solid var(--linha);
+  padding: 40px 0;
+  display: grid;
+  gap: 18px;
+  /* Item de grid nasce com min-width:auto e NAO encolhe abaixo do conteudo —
+     a tabela de medicoes empurrava a pagina inteira para o lado no celular,
+     mesmo com overflow-x no envolucro dela. */
+  min-width: 0;
+}
+.versao-corpo, .versao-cabecalho { min-width: 0; }
+
+.versao-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; }
+.versao-tag {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--acento);
+  background: var(--acento-fraco);
+  border: 1px solid #3A3220;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.versao-data { color: var(--texto-suave); font-size: 0.86rem; font-family: var(--mono); }
+.versao-plataforma { color: var(--texto-suave); font-size: 0.86rem; }
+
+.versao h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); margin: 0; }
+.versao-corpo { max-width: 70ch; }
+.versao-corpo > p { color: var(--texto-suave); }
+.versao-corpo strong { color: var(--texto); font-weight: 650; }
+
+caption { text-align: left; }
+.tabela-envolve { overflow-x: auto; margin: 18px 0; }
+table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 340px;
+}
+th, td {
+  text-align: left;
+  padding: 8px 18px 8px 0;
+  border-bottom: 1px solid var(--linha);
+  white-space: nowrap;
+}
+th { color: var(--texto-suave); font-weight: 600; font-size: 0.8rem;
+     text-transform: uppercase; letter-spacing: 0.06em; }
+td { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+td:first-child { font-family: var(--sans); color: var(--texto-suave); }
+
+.baixar-versao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--acento);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  min-height: 44px;
+}
+.baixar-versao svg { width: 20px; height: 20px; flex: none; }
+.baixar-versao:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ------------------------------------------------------------ respiros */
+
+@media (min-width: 900px) {
+  .heroi {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    padding-top: 84px;
+    padding-bottom: 72px;
+  }
+  .telas { grid-template-columns: 1fr; gap: 56px; }
+  .detalhe-grade { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .modos { grid-template-columns: repeat(2, 1fr); }
+  .rodape-conteudo {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 48px;
+  }
+  .rodape-links { justify-content: flex-end; max-width: 460px; }
+  .versao { grid-template-columns: 220px 1fr; gap: 32px; }
+  .versao-cabecalho { grid-column: 1; }
+  .versao-corpo { grid-column: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .botao:hover { transform: none; }
+}

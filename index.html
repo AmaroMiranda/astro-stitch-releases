@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AstroStitch</title>
+<meta name="description" content="Mosaicos de Lua, Sol, céu profundo e panoramas a partir dos seus quadros. Para Windows e Android.">
+<meta name="theme-color" content="#05070D">
+<link rel="canonical" href="https://amaromiranda.github.io/astro-stitch-releases/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AstroStitch">
+<meta property="og:description" content="Mosaicos de Lua, Sol, céu profundo e panoramas a partir dos seus quadros.">
+<meta property="og:image" content="https://amaromiranda.github.io/astro-stitch-releases/assets/mosaico-800.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="faixa">
+    <a class="marca" href="./" aria-label="AstroStitch — início">
+      <svg class="marca-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" opacity=".55"/>
+      </svg>
+      <span>AstroStitch</span>
+    </a>
+    <nav class="navegacao" aria-label="Principal">
+      <a href="releases.html">Notas de versão</a>
+      <a href="#obter">Baixar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ============================================================ HERÓI
+       Texto e ações à esquerda, resultado real à direita. No celular a
+       ordem vira texto -> botões -> imagem: quem chega precisa saber o que
+       é e quanto custa antes de ver a foto. -->
+  <section class="heroi">
+    <div class="heroi-texto">
+      <h1>Una seus quadros<br>em um mosaico.</h1>
+      <p class="linha-fina">
+        Mosaicos de Lua, Sol, céu profundo e panoramas, montados a partir das
+        suas capturas. O processamento acontece no seu aparelho — as fotos
+        não saem dele.
+      </p>
+
+      <div class="acoes" id="obter">
+        <a class="botao botao-primario"
+           href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/latest">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v12m0 0 4.2-4.2M12 15l-4.2-4.2M4 19h16"
+                  fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="botao-texto">
+            <strong>Baixar para Windows</strong>
+            <small>Grátis · x64 · .zip</small>
+          </span>
+        </a>
+
+        <a class="botao botao-secundario"
+           href="https://play.google.com/store/apps/details?id=com.astrostitch.app">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 3.5v17a1 1 0 0 0 1.5.86l13-8.5a1 1 0 0 0 0-1.72l-13-8.5A1 1 0 0 0 4 3.5z"
+                  fill="none" stroke="currentColor" stroke-width="1.6"
+                  stroke-linejoin="round"/>
+          </svg>
+          <span class="botao-texto">
+            <strong>Ver na Google Play</strong>
+            <small>Android · aplicativo pago</small>
+          </span>
+        </a>
+      </div>
+
+      <p class="nota-versao">
+        Versão <span class="dado">0.56.2</span> para Windows ·
+        <a href="releases.html">o que mudou</a>
+      </p>
+    </div>
+
+    <figure class="heroi-figura">
+      <picture>
+        <source media="(max-width: 560px)" srcset="assets/mosaico-480.webp" type="image/webp">
+        <source media="(max-width: 1000px)" srcset="assets/mosaico-800.webp" type="image/webp">
+        <img src="assets/mosaico-1440.webp" width="1440" height="1504"
+             fetchpriority="high" decoding="async"
+             alt="Mosaico lunar composto pelo AstroStitch: a Lua gibosa, com os mares
+                  em tom azulado da cor mineral real realçada pelo app.">
+      </picture>
+      <figcaption>
+        Mosaico de <span class="dado">11</span> quadros, saída de
+        <span class="dado">2169 × 2299</span>, com a Lua Mineral ligada.
+        Composto no AstroStitch para Windows.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ====================================================== COMO SE USA
+       Duas capturas, cada uma respondendo a uma pergunta diferente: o que
+       eu consigo produzir, e como vou trabalhar. -->
+  <section class="secao">
+    <div class="secao-cabecalho">
+      <p class="rotulo">Como se usa</p>
+      <h2>Você escolhe os quadros. O app alinha e compõe.</h2>
+      <p class="linha-fina">
+        Sem camadas, sem máscaras, sem passo a passo de edição. O modo escolhido
+        já ajusta projeção, costura e recorte — e o que você vê na tela é o que
+        sai no arquivo.
+      </p>
+    </div>
+
+    <div class="telas">
+      <figure class="tela">
+        <picture>
+          <source media="(max-width: 860px)" srcset="assets/tela-quadros-800.webp" type="image/webp">
+          <img src="assets/tela-quadros-1306.webp" width="1306" height="853"
+               loading="lazy" decoding="async"
+               alt="Janela do AstroStitch para Windows com doze quadros lunares
+                    importados: a fita de miniaturas embaixo, o quadro selecionado
+                    no centro e os controles de saída à direita.">
+        </picture>
+        <figcaption>
+          <strong>1. Os quadros entram.</strong>
+          Arraste a pasta ou escolha os arquivos — RAW de câmera, TIFF, PNG ou JPG,
+          em 8 ou 16 bits. O app confere tamanhos e avisa se um deles destoa.
+        </figcaption>
+      </figure>
+
+      <figure class="tela">
+        <picture>
+          <source media="(max-width: 860px)" srcset="assets/tela-resultado-800.webp" type="image/webp">
+          <img src="assets/tela-resultado-1306.webp" width="1306" height="853"
+               loading="lazy" decoding="async"
+               alt="A mesma janela depois de compor: o mosaico pronto no centro,
+                    e à direita a resolução, o formato de saída e a opção Lua
+                    Mineral ligada.">
+        </picture>
+        <figcaption>
+          <strong>2. O mosaico sai pronto.</strong>
+          Resolução total ou reduzida, TIFF de 16 bits para continuar editando,
+          PNG ou JPG para publicar. A <em>Lua Mineral</em> realça a cor mineral
+          real do solo — titânio puxando para o azul, ferro para o laranja.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ====================================================== O DETALHE
+       O que a imagem inteira reduzida esconde. Sem isto, o site mostra uma
+       Lua bonita e nao prova nada sobre o que o app preserva. -->
+  <section class="secao secao-detalhe">
+    <div class="detalhe-grade">
+      <figure class="detalhe-figura">
+        <picture>
+          <source media="(max-width: 560px)" srcset="assets/detalhe-480.webp" type="image/webp">
+          <img src="assets/detalhe-900.webp" width="900" height="900"
+               loading="lazy" decoding="async"
+               alt="Recorte em escala real do mosaico, mostrando crateras pequenas
+                    e o relevo do terreno perto do terminador.">
+        </picture>
+      </figure>
+      <div class="detalhe-texto">
+        <p class="rotulo">Detalhe do mosaico</p>
+        <h2>O detalhe que a vista geral esconde.</h2>
+        <p class="linha-fina">
+          Um recorte de <span class="dado">900 × 900</span> pixels do arquivo
+          exportado — o mosaico inteiro tem <span class="dado">2169 × 2299</span> —
+          redimensionado aqui para caber na página.
+        </p>
+        <p class="linha-fina">
+          A costura não mora na foto inteira — mora aqui, onde dois quadros se
+          encontram e o relevo precisa continuar de um para o outro.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== OS MODOS -->
+  <section class="secao">
+    <div class="secao-cabecalho">
+      <p class="rotulo">Quatro assuntos</p>
+      <h2>Cada um com a sua geometria.</h2>
+    </div>
+    <ul class="modos">
+      <li>
+        <h3>Lua</h3>
+        <p>Disco inteiro ou close-up. Reconhece o contorno do limbo ângulo a
+          ângulo, em vez de recortar por uma elipse com folga.</p>
+      </li>
+      <li>
+        <h3>Sol</h3>
+        <p>Mesma geometria de disco da Lua, com o tratamento de borda que a
+          granulação solar pede.</p>
+      </li>
+      <li>
+        <h3>Céu profundo</h3>
+        <p>Alinhamento por estrelas e equalização fotométrica entre painéis,
+          para o fundo de céu não dar degrau.</p>
+      </li>
+      <li>
+        <h3>Panorama</h3>
+        <p>Paisagem terrestre, com projeção esférica ou plana conforme o
+          fechamento de laço medido nos seus quadros.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====================================================== ATUALIZAÇÃO -->
+  <section class="secao secao-versao">
+    <div class="secao-cabecalho">
+      <p class="rotulo">Atualização mais recente</p>
+      <h2>v0.56.2 — Redução do degrau no limbo da Lua</h2>
+    </div>
+    <ul class="mudancas">
+      <li>
+        <p><strong>Degrau no limbo quase eliminado.</strong> Em mosaicos com muitos
+          quadros, a borda do disco podia dar um salto onde a composição trocava
+          de painel.</p>
+        <p class="medicao">No conjunto de teste, o salto caiu de
+          <span class="dado">11,7</span> para <span class="dado">1,5</span> pixel.</p>
+      </li>
+      <li>
+        <p><strong>Mais disco aproveitado.</strong> Com os painéis caindo no
+          lugar certo, o contorno da Lua é reconhecido na volta inteira em vez de
+          em pedaços.</p>
+        <p class="medicao">Num mosaico de celular com 16 quadros, a cobertura da
+          borda subiu de <span class="dado">47%</span> para
+          <span class="dado">64%</span>.</p>
+      </li>
+    </ul>
+    <p class="mais">
+      <a class="link-seta" href="releases.html">
+        Ver o histórico completo
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape-conteudo">
+    <div class="rodape-marca">
+      <p class="rodape-nome">AstroStitch</p>
+      <p class="rodape-sub">
+        As suas fotos são processadas no seu aparelho e não são enviadas a
+        lugar nenhum.
+      </p>
+    </div>
+    <nav class="rodape-links" aria-label="Rodapé">
+      <a href="releases.html">Notas de versão</a>
+      <a href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/latest">Baixar para Windows</a>
+      <a href="https://play.google.com/store/apps/details?id=com.astrostitch.app">Google Play</a>
+      <a href="privacy-policy.html">Política de privacidade</a>
+      <a href="privacy-policy.en.html">Privacy policy (EN)</a>
+      <a href="third-party-sources/">Fontes de terceiros</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
