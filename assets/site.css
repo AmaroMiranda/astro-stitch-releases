@@ -187,6 +187,12 @@ h1 {
 }
 .botao:hover { transform: translateY(-1px); }
 .botao svg { width: 24px; height: 24px; flex: none; }
+/* A marca do Google Play vai COLORIDA e com a proporcao dela (e mais alta que
+   larga): e o unico elemento de outra marca na pagina, e reconhece-la de
+   relance e exatamente o motivo de ela estar aqui. */
+.marca-play { flex: none; width: auto; }
+.botao .marca-play { height: 24px; }
+.cartao-topo .marca-play { height: 32px; }
 .botao-texto { display: flex; flex-direction: column; line-height: 1.25; }
 .botao-texto strong { font-weight: 650; font-size: 1.05rem; }
 .botao-texto small { font-size: 0.82rem; opacity: .75; }
