@@ -27,8 +27,8 @@
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
           "Liberation Mono", monospace;
 
-  --largura: 1120px;
-  --gutter: 24px;
+  --largura: 1440px;
+  --gutter: clamp(24px, 3.5vw, 48px);
 }
 
 * { box-sizing: border-box; }
@@ -98,7 +98,15 @@ a { color: var(--texto); }
   letter-spacing: -0.01em;
   font-size: 1.02rem;
 }
-.marca-icone { width: 22px; height: 22px; color: var(--acento); flex: none; }
+/* Agora e o icone do app, nao um desenho meu: raio pequeno porque ele e um
+   icone de aplicativo quadrado, e a borda o separa do fundo quase preto. */
+.marca-icone {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 7px;
+  border: 1px solid var(--linha);
+}
 
 .navegacao { display: flex; gap: 22px; }
 .navegacao a {
@@ -107,6 +115,27 @@ a { color: var(--texto); }
   font-size: 0.95rem;
 }
 .navegacao a:hover { color: var(--texto); }
+
+/* O topo e fixo, entao este botao e o unico download que acompanha a pessoa
+   pagina abaixo. Era um link de texto igual aos outros e desaparecia. */
+.navegacao .nav-baixar {
+  color: #0A0A0A;
+  background: var(--acento);
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color .16s ease;
+}
+.navegacao .nav-baixar:hover { background: #F0D691; color: #0A0A0A; }
+.navegacao .nav-baixar svg { width: 17px; height: 17px; flex: none; }
+@media (max-width: 520px) {
+  .navegacao { gap: 14px; }
+  .navegacao .nav-baixar { padding: 8px 13px; }
+  .navegacao .nav-baixar .nav-rotulo { display: none; }
+}
 
 /* ---------------------------------------------------------------- herói */
 
@@ -140,7 +169,6 @@ h1 {
   flex-wrap: wrap;
   gap: 12px;
   margin: 26px 0 16px;
-  scroll-margin-top: 80px;
 }
 
 /* O PREÇO VAI NO PRÓPRIO BOTÃO. "Disponível para Android" não comunica que
@@ -149,7 +177,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 13px 20px;
+  padding: 16px 24px;
   border-radius: 12px;
   text-decoration: none;
   border: 1px solid transparent;
@@ -158,10 +186,10 @@ h1 {
   min-height: 48px;
 }
 .botao:hover { transform: translateY(-1px); }
-.botao svg { width: 22px; height: 22px; flex: none; }
+.botao svg { width: 24px; height: 24px; flex: none; }
 .botao-texto { display: flex; flex-direction: column; line-height: 1.25; }
-.botao-texto strong { font-weight: 650; font-size: 0.98rem; }
-.botao-texto small { font-size: 0.8rem; opacity: .72; }
+.botao-texto strong { font-weight: 650; font-size: 1.05rem; }
+.botao-texto small { font-size: 0.82rem; opacity: .75; }
 
 .botao-primario {
   background: var(--acento);
@@ -242,6 +270,7 @@ h3 {
 
 .telas { display: grid; gap: 40px; }
 .tela { margin: 0; }
+.tela picture { display: block; max-width: 1306px; margin-inline: auto; }
 .tela img {
   border-radius: 12px;
   border: 1px solid var(--linha);
@@ -256,6 +285,101 @@ h3 {
 .detalhe-grade { display: grid; gap: 32px; align-items: center; }
 .detalhe-figura { margin: 0; }
 .detalhe-figura img { border-radius: 12px; }
+
+/* ------------------------------------------------------------- download
+   O download so existia no heroi e num link de rodape: quem rolava a pagina
+   inteira chegava ao fim sem uma acao a vista. Esta secao e o destino do
+   "Baixar" do topo. */
+
+.secao-baixar { padding-bottom: 72px; scroll-margin-top: 76px; }
+
+.cartoes-baixar { display: grid; gap: 20px; }
+
+.cartao-baixar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  background: var(--superficie);
+  text-decoration: none;
+  color: var(--texto);
+  transition: border-color .16s ease, background-color .16s ease,
+              transform .16s ease;
+}
+.cartao-baixar:hover {
+  border-color: #33415A;
+  background: var(--elevada);
+  transform: translateY(-2px);
+}
+/* O gratuito ganha a borda de acento: entre dois cartoes iguais, nada diz
+   por onde comecar. */
+.cartao-destaque { border-color: color-mix(in srgb, var(--acento) 42%, var(--linha)); }
+.cartao-destaque:hover { border-color: var(--acento); }
+
+.cartao-topo { display: flex; align-items: center; gap: 14px; }
+.cartao-topo svg { width: 34px; height: 34px; flex: none; color: var(--acento); }
+.cartao-plataforma {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.cartao-preco {
+  margin: 2px 0 0;
+  font-size: 0.86rem;
+  color: var(--texto-suave);
+}
+.cartao-texto { margin: 0; color: var(--texto-suave); font-size: 0.95rem; }
+
+.cartao-dados {
+  list-style: none;
+  margin: 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--linha);
+  display: grid;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+.cartao-dados li { display: flex; justify-content: space-between; gap: 16px; }
+.cartao-dados span:first-child { color: var(--texto-suave); }
+
+.cartao-acao {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 20px;
+  border-radius: 11px;
+  font-weight: 650;
+  background: var(--elevada);
+  border: 1px solid var(--linha);
+}
+.cartao-acao svg { width: 18px; height: 18px; flex: none; }
+/* O selo da Google vai inteiro e sem recorte: a diretriz de marca dela pede
+   que nao seja modificado, e o espaco livre ao redor ja vem no proprio PNG.
+   Por isso este nao ganha fundo nem borda — so a altura. */
+.cartao-acao-selo {
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: 0;
+  /* centralizado: encostado a esquerda, ao lado do botao dourado do cartao
+     vizinho, o cartao Android parecia inacabado */
+  justify-content: center;
+}
+.cartao-acao-selo img { height: 64px; width: auto; }
+.cartao-baixar:hover .cartao-acao-selo { border-color: transparent; }
+.cartao-destaque .cartao-acao {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: #0A0A0A;
+}
+.cartao-baixar:hover .cartao-acao { border-color: #3B4A64; }
+.cartao-destaque:hover .cartao-acao { background: #F0D691; border-color: #F0D691; }
 
 /* ---------------------------------------------------------------- modos */
 
@@ -416,7 +540,7 @@ td:first-child { font-family: var(--sans); color: var(--texto-suave); }
 @media (min-width: 900px) {
   .heroi {
     grid-template-columns: 1.05fr 1fr;
-    gap: 64px;
+    gap: 40px;
     padding-top: 84px;
     padding-bottom: 72px;
   }
@@ -428,10 +552,25 @@ td:first-child { font-family: var(--sans); color: var(--texto-suave); }
     align-items: start;
     gap: 48px;
   }
-  .rodape-links { justify-content: flex-end; max-width: 460px; }
+  /* 460 px cabia tres dos quatro links e jogava o ultimo sozinho para a
+     linha de baixo; com a casca mais larga ha espaco para a linha inteira. */
+  .rodape-links { justify-content: flex-end; max-width: 700px; }
+  .cartoes-baixar { grid-template-columns: 1fr 1fr; gap: 24px; }
   .versao { grid-template-columns: 220px 1fr; gap: 32px; }
   .versao-cabecalho { grid-column: 1; }
   .versao-corpo { grid-column: 2; }
+}
+
+/* Num monitor de 1920 a pagina ficava num poste de 1120 px com 400 px mortos
+   de cada lado. Aqui a largura vira layout, nao so margem maior: a legenda sai
+   de baixo da captura e vai para o lado dela, e os quatro modos entram numa
+   linha so. A captura CONTINUA grande — ela e a interface do app, com texto
+   pequeno, e encolher para caber duas lado a lado a tornaria ilegivel. */
+@media (min-width: 1240px) {
+  .heroi { gap: 72px; }
+  .modos { grid-template-columns: repeat(4, 1fr); }
+  .detalhe-grade { grid-template-columns: 1.25fr 1fr; gap: 64px; }
+  .telas { gap: 64px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

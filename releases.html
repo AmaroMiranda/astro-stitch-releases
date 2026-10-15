@@ -8,7 +8,8 @@
 <meta name="theme-color" content="#05070D">
 <link rel="canonical" href="https://amaromiranda.github.io/astro-stitch-releases/releases.html">
 
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icone-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/icone-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
@@ -21,15 +22,20 @@
 <header class="topo">
   <div class="faixa">
     <a class="marca" href="./" aria-label="AstroStitch — início">
-      <svg class="marca-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" opacity=".55"/>
-      </svg>
+      <img class="marca-icone" src="assets/icone-64.png" width="28" height="28"
+           alt="" decoding="async">
       <span>AstroStitch</span>
     </a>
     <nav class="navegacao" aria-label="Principal">
       <a href="releases.html" aria-current="page">Notas de versão</a>
-      <a href="./#obter">Baixar</a>
+      <a class="nav-baixar" href="./#obter">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 3v12m0 0 4.2-4.2M12 15l-4.2-4.2M4 19h16"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-rotulo">Baixar</span>
+      </a>
     </nav>
   </div>
 </header>
