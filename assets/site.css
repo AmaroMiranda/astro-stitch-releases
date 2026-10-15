@@ -142,6 +142,45 @@ a { color: var(--texto); }
   .navegacao .nav-baixar .nav-rotulo { display: none; }
 }
 
+/* ------------------------------------------------------------- idiomas
+   Tres rotulos curtos, nao uma lista suspensa: com tres opcoes, o menu
+   custa um clique a mais e nao economiza nada. O atual nao e link morto —
+   continua clicavel — mas e o unico com cor de texto cheia. */
+
+.faixa > .marca { margin-right: auto; }
+
+.idiomas {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+  padding-left: 14px;
+  border-left: 1px solid var(--linha);
+}
+.idiomas a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding: 6px 7px;
+  border-radius: 6px;
+}
+.idiomas a:hover { color: var(--texto); background: var(--elevada); }
+.idiomas a[aria-current] { color: var(--texto); font-weight: 600; }
+
+/* MEDIDO em 390 px: a barra precisa de 418 px em ingles, 432 em portugues e
+   437 em espanhol — e so tem 390. Por isso o nome escrito sai e fica o icone
+   do app, que e reconhecivel sozinho; o link mantem o aria-label, entao
+   leitor de tela nao perde nada. O link das notas ganha nowrap porque era
+   ele que quebrava em duas linhas e esticava o cabecalho. */
+@media (max-width: 560px) {
+  .faixa { gap: 8px; }
+  .marca span { display: none; }
+  .navegacao a { white-space: nowrap; }
+  .idiomas { padding-left: 8px; margin-left: 0; }
+  .idiomas a { padding: 6px 4px; font-size: 0.74rem; }
+}
+
 /* ---------------------------------------------------------------- herói */
 
 .heroi {
