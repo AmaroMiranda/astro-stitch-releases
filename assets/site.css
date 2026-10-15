@@ -414,6 +414,32 @@ h3 {
   .apoio-caixa { padding: 48px 52px; }
 }
 
+/* --------------------------------------------------------- lua mineral
+   O par vive lado a lado desde cedo: separados por rolagem, o antes e o
+   depois deixam de ser comparacao e viram duas fotos soltas. */
+
+.par-mineral { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; }
+.lado-mineral { margin: 0; }
+.lado-mineral img {
+  border-radius: 12px;
+  border: 1px solid var(--linha);
+  width: 100%;
+}
+.lado-mineral figcaption { font-size: 0.86rem; }
+.lado-mineral figcaption strong { color: var(--texto); font-weight: 600; }
+
+.mineral-inteiro { margin: 44px 0 0; }
+.mineral-inteiro img {
+  border-radius: 14px;
+  border: 1px solid var(--linha);
+  margin-inline: auto;
+}
+.mineral-inteiro figcaption { max-width: 60ch; margin-inline: auto; text-align: center; }
+
+@media (min-width: 900px) {
+  .par-mineral { gap: 28px; }
+}
+
 /* ---------------------------------------------------------------- modos */
 
 .modos {
@@ -441,6 +467,14 @@ h3 {
   margin-top: 4px !important;
   padding-left: 14px;
   border-left: 2px solid var(--linha);
+}
+
+/* Esta medicao nao segue um paragrafo: ela fecha o par de imagens, e os 4px
+   de .medicao a colariam na borda de baixo. O !important e para vencer o
+   !important de la, nao por capricho. */
+.medicao-solta {
+  margin-top: 26px !important;
+  max-width: 68ch;
 }
 
 .mais { margin: 0; }

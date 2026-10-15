@@ -189,6 +189,80 @@
     </div>
   </section>
 
+  <!-- ====================================================== LUA MINERAL
+       O par antes/depois sai do MESMO arquivo composto, so com o ajuste
+       ligado: e a unica forma honesta de mostrar o efeito. O recorte nao foi
+       escolhido a olho — e o quadrado de 700 px onde a diferenca de saturacao
+       medida entre as duas saidas foi a maior do mosaico. -->
+  <section class="secao secao-mineral">
+    <div class="secao-cabecalho">
+      <p class="rotulo">Lua Mineral</p>
+      <h2>A cor já estava lá.</h2>
+      <p class="linha-fina">
+        A Lua não é cinza. O solo muda de química de uma região para a outra, e
+        isso muda a cor: basalto com muito titânio reflete mais para o azul,
+        solo rico em ferro puxa para o laranja. A sua câmera registra essa
+        diferença — ela é só fraca demais para o olho achar sozinho.
+      </p>
+      <p class="linha-fina">
+        A <em>Lua Mineral</em> amplia o que já está no arquivo, sem mexer no
+        brilho e sem inventar cor. Abaixo, o mesmo recorte do mesmo mosaico:
+        à esquerda como saiu da costura, à direita com vibração em
+        <span class="dado">70%</span> e redução de ruído de cor no máximo.
+      </p>
+    </div>
+
+    <div class="par-mineral">
+      <figure class="lado-mineral">
+        <picture>
+          <source media="(max-width: 560px)" srcset="assets/mineral-antes-480.webp" type="image/webp">
+          <img src="assets/mineral-antes-760.webp" width="760" height="760"
+               loading="lazy" decoding="async"
+               alt="Recorte do mosaico com a Lua Mineral desligada: a fronteira
+                    entre dois mares aparece só como dois tons de cinza.">
+        </picture>
+        <figcaption><strong>Desligada.</strong> Dois mares vizinhos, e nada
+          além de cinza para separá-los.</figcaption>
+      </figure>
+
+      <figure class="lado-mineral">
+        <picture>
+          <source media="(max-width: 560px)" srcset="assets/mineral-depois-480.webp" type="image/webp">
+          <img src="assets/mineral-depois-760.webp" width="760" height="760"
+               loading="lazy" decoding="async"
+               alt="O mesmo recorte com a Lua Mineral ligada: o mar da esquerda
+                    puxa para o laranja e o da direita para o azul, revelando a
+                    fronteira entre dois solos de química diferente.">
+        </picture>
+        <figcaption><strong>Ligada.</strong> O mesmo arquivo: um mar puxa para
+          o laranja, o vizinho para o azul. A fronteira entre eles é química,
+          não contraste.</figcaption>
+      </figure>
+    </div>
+
+    <p class="medicao medicao-solta">
+      Medido no disco, entre as duas saídas acima: a saturação média sobe de
+      <span class="dado">1,31%</span> para <span class="dado">6,35%</span> —
+      <span class="dado">4,9×</span>. O brilho não foi tocado.
+    </p>
+
+    <figure class="mineral-inteiro">
+      <picture>
+        <source media="(max-width: 560px)" srcset="assets/mineral-480.webp" type="image/webp">
+        <source media="(max-width: 1000px)" srcset="assets/mineral-700.webp" type="image/webp">
+        <img src="assets/mineral-1100.webp" width="1100" height="1166"
+             loading="lazy" decoding="async"
+             alt="O mosaico lunar inteiro com a Lua Mineral ligada: os mares
+                  aparecem em tons distintos de azul e castanho conforme o
+                  mineral dominante.">
+      </picture>
+      <figcaption>
+        O mesmo mosaico de <span class="dado">11</span> painéis da abertura
+        desta página, com os ajustes acima aplicados.
+      </figcaption>
+    </figure>
+  </section>
+
   <!-- ====================================================== OS MODOS -->
   <section class="secao">
     <div class="secao-cabecalho">
