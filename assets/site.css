@@ -21,10 +21,15 @@
   --acento:       #E8C87A;
   --acento-fraco: #2A2316;
 
-  --serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+  /* Spectral no titulo: serif desenhada para tela, com numerais de verdade e
+     ar de publicacao cientifica. IBM Plex no resto — familia feita para
+     comunicacao tecnica, e o mono dela carrega os numeros medidos, que sao a
+     substancia deste site. As tres compartilham sobriedade; nenhuma delas
+     disputa atencao com a fotografia. */
+  --serif: "Spectral", ui-serif, Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
           "Liberation Mono", monospace;
 
   --largura: 1440px;
@@ -63,7 +68,7 @@ a { color: var(--texto); }
   background: var(--acento);
   color: #0A0A0A;
   padding: 10px 16px;
-  font-weight: 700;
+  font-weight: 600;
   z-index: 10;
 }
 .pular:focus { left: 8px; top: 8px; }
@@ -94,7 +99,7 @@ a { color: var(--texto); }
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.01em;
   font-size: 1.02rem;
 }
@@ -123,7 +128,7 @@ a { color: var(--texto); }
   background: var(--acento);
   padding: 9px 16px;
   border-radius: 9px;
-  font-weight: 650;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -150,10 +155,10 @@ a { color: var(--texto); }
 
 h1 {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(2.6rem, 7vw, 4.1rem);
-  line-height: 1.04;
-  letter-spacing: -0.015em;
+  font-weight: 300;
+  font-size: clamp(2.3rem, 5.4vw, 3.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.012em;
   margin: 0 0 18px;
   text-wrap: balance;
 }
@@ -194,7 +199,7 @@ h1 {
 .botao .marca-play { height: 24px; }
 .cartao-topo .marca-play { height: 32px; }
 .botao-texto { display: flex; flex-direction: column; line-height: 1.25; }
-.botao-texto strong { font-weight: 650; font-size: 1.05rem; }
+.botao-texto strong { font-weight: 600; font-size: 1.05rem; }
 .botao-texto small { font-size: 0.82rem; opacity: .75; }
 
 .botao-primario {
@@ -259,8 +264,8 @@ figcaption {
 h2 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  line-height: 1.12;
+  font-size: clamp(1.6rem, 3.3vw, 2.15rem);
+  line-height: 1.22;
   letter-spacing: -0.01em;
   margin: 0 0 14px;
   text-wrap: balance;
@@ -268,7 +273,7 @@ h2 {
 
 h3 {
   font-size: 1.02rem;
-  font-weight: 650;
+  font-weight: 600;
   margin: 0 0 6px;
 }
 
@@ -283,7 +288,7 @@ h3 {
   background: var(--superficie);
 }
 .tela figcaption { max-width: 62ch; }
-.tela figcaption strong { color: var(--texto); font-weight: 650; }
+.tela figcaption strong { color: var(--texto); font-weight: 600; }
 
 /* -------------------------------------------------------------- detalhe */
 
@@ -329,7 +334,7 @@ h3 {
 .cartao-plataforma {
   margin: 0;
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   line-height: 1.1;
 }
 .cartao-preco {
@@ -360,7 +365,7 @@ h3 {
   min-height: 48px;
   padding: 13px 20px;
   border-radius: 11px;
-  font-weight: 650;
+  font-weight: 600;
   background: var(--elevada);
   border: 1px solid var(--linha);
 }
@@ -387,6 +392,28 @@ h3 {
 .cartao-baixar:hover .cartao-acao { border-color: #3B4A64; }
 .cartao-destaque:hover .cartao-acao { background: #F0D691; border-color: #F0D691; }
 
+/* ----------------------------------------------------------------- apoio
+   Uma caixa, nao uma faixa colorida: pedir apoio num site sobrio nao pode
+   virar o elemento mais chamativo da pagina. O acento ja esta no botao. */
+
+.secao-apoio { padding-top: 56px; padding-bottom: 80px; scroll-margin-top: 76px; }
+
+.apoio-caixa {
+  border: 1px solid var(--linha);
+  border-radius: 18px;
+  background: var(--superficie);
+  padding: 40px;
+  max-width: 760px;
+}
+.apoio-caixa h2 { margin-bottom: 18px; }
+.apoio-caixa .linha-fina { margin: 0 0 14px; }
+.apoio-caixa .linha-fina:last-of-type { margin-bottom: 26px; }
+.botao-apoio { align-self: flex-start; }
+
+@media (min-width: 900px) {
+  .apoio-caixa { padding: 48px 52px; }
+}
+
 /* ---------------------------------------------------------------- modos */
 
 .modos {
@@ -404,7 +431,7 @@ h3 {
 .mudancas { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 22px; }
 .mudancas li { max-width: 68ch; }
 .mudancas p { margin: 0; }
-.mudancas strong { font-weight: 650; }
+.mudancas strong { font-weight: 600; }
 
 /* A MEDIÇÃO FICA, numa segunda camada. "Precisão oito vezes maior"
    transformaria uma medida localizada numa promessa geral. */
@@ -443,7 +470,7 @@ h3 {
   display: grid;
   gap: 28px;
 }
-.rodape-nome { font-family: var(--serif); font-size: 1.3rem; margin: 0 0 6px; }
+.rodape-nome { font-family: var(--serif); font-size: 1.2rem; margin: 0 0 6px; }
 .rodape-sub { color: var(--texto-suave); font-size: 0.9rem; margin: 0; max-width: 42ch; }
 .rodape-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
 .rodape-links a {
@@ -508,7 +535,7 @@ h3 {
 .versao h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); margin: 0; }
 .versao-corpo { max-width: 70ch; }
 .versao-corpo > p { color: var(--texto-suave); }
-.versao-corpo strong { color: var(--texto); font-weight: 650; }
+.versao-corpo strong { color: var(--texto); font-weight: 600; }
 
 caption { text-align: left; }
 .tabela-envolve { overflow-x: auto; margin: 18px 0; }

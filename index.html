@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AstroStitch</title>
-<meta name="description" content="Mosaicos de Lua, Sol, céu profundo e panoramas a partir dos seus quadros. Para Windows e Android.">
+<meta name="description" content="Mosaicos de Lua, Sol, céu profundo e panoramas a partir dos seus painéis. Para Windows e Android.">
 <meta name="theme-color" content="#05070D">
 <link rel="canonical" href="https://amaromiranda.github.io/astro-stitch-releases/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="AstroStitch">
-<meta property="og:description" content="Mosaicos de Lua, Sol, céu profundo e panoramas a partir dos seus quadros.">
+<meta property="og:description" content="Mosaicos de Lua, Sol, céu profundo e panoramas a partir dos seus painéis.">
 <meta property="og:image" content="https://amaromiranda.github.io/astro-stitch-releases/assets/mosaico-800.webp">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="assets/icone-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;600&family=Spectral:wght@300;400&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -54,7 +54,7 @@
        é e quanto custa antes de ver a foto. -->
   <section class="heroi">
     <div class="heroi-texto">
-      <h1>Una seus quadros<br>em um mosaico.</h1>
+      <h1>Una seus painéis<br>em um mosaico.</h1>
       <p class="linha-fina">
         Mosaicos de Lua, Sol, céu profundo e panoramas, montados a partir das
         suas capturas. O processamento acontece no seu aparelho — as fotos
@@ -63,7 +63,7 @@
 
       <div class="acoes">
         <a class="botao botao-primario"
-           href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/latest">
+           href="https://github.com/AmaroMiranda/astro-stitch-releases/releases/download/v0.56.2/AstroStitch-v0.56.2-windows-x64.zip" download>
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 3v12m0 0 4.2-4.2M12 15l-4.2-4.2M4 19h16"
                   fill="none" stroke="currentColor" stroke-width="1.8"
@@ -102,7 +102,7 @@
                   em tom azulado da cor mineral real realçada pelo app.">
       </picture>
       <figcaption>
-        Mosaico de <span class="dado">11</span> quadros, saída de
+        Mosaico de <span class="dado">11</span> painéis, saída de
         <span class="dado">2169 × 2299</span>, com a Lua Mineral ligada.
         Composto no AstroStitch para Windows.
       </figcaption>
@@ -115,7 +115,7 @@
   <section class="secao">
     <div class="secao-cabecalho">
       <p class="rotulo">Como se usa</p>
-      <h2>Você escolhe os quadros. O app alinha e compõe.</h2>
+      <h2>Você escolhe os painéis. O app alinha e compõe.</h2>
       <p class="linha-fina">
         Sem camadas, sem máscaras, sem passo a passo de edição. O modo escolhido
         já ajusta projeção, costura e recorte — e o que você vê na tela é o que
@@ -129,12 +129,12 @@
           <source media="(max-width: 860px)" srcset="assets/tela-quadros-800.webp" type="image/webp">
           <img src="assets/tela-quadros-1306.webp" width="1306" height="853"
                loading="lazy" decoding="async"
-               alt="Janela do AstroStitch para Windows com doze quadros lunares
-                    importados: a fita de miniaturas embaixo, o quadro selecionado
+               alt="Janela do AstroStitch para Windows com doze painéis lunares
+                    importados: a fita de miniaturas embaixo, o painel selecionado
                     no centro e os controles de saída à direita.">
         </picture>
         <figcaption>
-          <strong>1. Os quadros entram.</strong>
+          <strong>1. Os painéis entram.</strong>
           Arraste a pasta ou escolha os arquivos — RAW de câmera, TIFF, PNG ou JPG,
           em 8 ou 16 bits. O app confere tamanhos e avisa se um deles destoa.
         </figcaption>
@@ -182,7 +182,7 @@
           redimensionado aqui para caber na página.
         </p>
         <p class="linha-fina">
-          A costura não mora na foto inteira — mora aqui, onde dois quadros se
+          A costura não mora na foto inteira — mora aqui, onde dois painéis se
           encontram e o relevo precisa continuar de um para o outro.
         </p>
       </div>
@@ -214,7 +214,7 @@
       <li>
         <h3>Panorama</h3>
         <p>Paisagem terrestre, com projeção esférica ou plana conforme o
-          fechamento de laço medido nos seus quadros.</p>
+          fechamento de laço medido nos seus painéis.</p>
       </li>
     </ul>
   </section>
@@ -228,8 +228,8 @@
     <ul class="mudancas">
       <li>
         <p><strong>Degrau no limbo quase eliminado.</strong> Em mosaicos com muitos
-          quadros, a borda do disco podia dar um salto onde a composição trocava
-          de painel.</p>
+          painéis, a borda do disco podia dar um salto bem na emenda entre
+          dois deles.</p>
         <p class="medicao">No conjunto de teste, o salto caiu de
           <span class="dado">11,7</span> para <span class="dado">1,5</span> pixel.</p>
       </li>
@@ -237,7 +237,7 @@
         <p><strong>Mais disco aproveitado.</strong> Com os painéis caindo no
           lugar certo, o contorno da Lua é reconhecido na volta inteira em vez de
           em pedaços.</p>
-        <p class="medicao">Num mosaico de celular com 16 quadros, a cobertura da
+        <p class="medicao">Num mosaico de celular com 16 painéis, a cobertura da
           borda subiu de <span class="dado">47%</span> para
           <span class="dado">64%</span>.</p>
       </li>
@@ -322,6 +322,47 @@
     </div>
   </section>
 
+  <!-- ====================================================== APOIO
+       Depois dos cartoes, nao antes: pedir dinheiro a quem ainda nao viu o
+       que o app faz e o jeito mais rapido de nao receber nada. O texto nao
+       promete nada que o site ja nao tenha mostrado. -->
+  <section class="secao secao-apoio" id="apoiar">
+    <div class="apoio-caixa">
+      <p class="rotulo">Apoie o projeto</p>
+      <h2>A versão para Windows é gratuita.<br>Ela continua assim.</h2>
+
+      <p class="linha-fina">
+        Sem anúncio, sem conta, sem telemetria. Não há servidor para pagar: o
+        app roda inteiro na sua máquina e as suas fotos não saem dela — por
+        isso não existe plano, nem assinatura, nem nada para vender depois.
+      </p>
+      <p class="linha-fina">
+        O que custa é o tempo. Cada correção nas notas de versão só entra
+        depois de medida em um conjunto de teste, e é a medição — não o
+        código — que leva os dias. É assim que o <em>degrau no limbo</em> saiu
+        de <span class="dado">11,7</span> para <span class="dado">1,5</span>
+        pixel em vez de só <em>parecer</em> melhor.
+      </p>
+      <p class="linha-fina">
+        Se o AstroStitch te poupou uma noite de trabalho, uma doação paga a
+        próxima correção.
+      </p>
+
+      <a class="botao botao-primario botao-apoio" href="https://www.paypal.com/donate/?business=amaro.miranda.37%40gmail.com&item_name=Apoio+ao+AstroStitch&currency_code=BRL"
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 21s-7.5-4.6-7.5-10A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 7.5 3c0 5.4-7.5 10-7.5 10z"
+                fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linejoin="round"/>
+        </svg>
+        <span class="botao-texto">
+          <strong>Doar pelo PayPal</strong>
+          <small>Você escolhe o valor · sem recorrência</small>
+        </span>
+      </a>
+    </div>
+  </section>
+
 </main>
 
 <footer class="rodape">
@@ -335,6 +376,7 @@
     </div>
     <nav class="rodape-links" aria-label="Rodapé">
       <a href="releases.html">Notas de versão</a>
+      <a href="#apoiar">Apoiar o projeto</a>
       <a href="privacy-policy.html">Política de privacidade</a>
       <a href="privacy-policy.en.html">Privacy policy (EN)</a>
       <a href="third-party-sources/">Fontes de terceiros</a>
